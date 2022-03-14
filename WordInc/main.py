@@ -8,15 +8,20 @@ wordList = words.readlines()
 for i in range(len(wordList)):
     wordList[i] = wordList[i].strip()
 
-#Input maximum number of tries
+#Input maximum number of tries and begin a used word list
 maxTries = int(input("Max tries: "))
+usedWords = []
 
 #Testing to see if the word passes the test (Is it a word? Is the given part in the word?)
 def testWord(word,part):
+    global usedWords
     if word == "":
         return False
-    elif (word in wordList) and (part in word):
+    elif (word in wordList) and (part in word) and (word not in usedWords):
+        usedWords.append(word)
         return True
+    elif word in usedWords:
+        print("You've already used "+'"'+word+'".')
     elif word not in wordList:
         print('"'+word+'"' + " is not a recognized word.")
     else:
