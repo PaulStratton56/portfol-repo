@@ -58109,3 +58109,7 @@ zoos
 zulu
 zulus
 supercalifragilisticexpialidocious
+color
+coloring
+colorful
+colors
